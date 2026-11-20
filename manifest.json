@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 7,
   "id": "claude-code",
   "name": "Claude Code",
   "description": "Uses your Claude plan. Image generation needs an OpenAI or Gemini key, added next.",
@@ -21,7 +21,30 @@
       "authStatusArgs": [
         "auth",
         "status"
-      ]
+      ],
+      "structuredRun": {
+        "args": [
+          "--print",
+          "--restricted",
+          "--no-session-persistence",
+          "--tools",
+          "",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}",
+          "--settings",
+          "{\"disableAllHooks\":true}",
+          "--output-format",
+          "json",
+          "--json-schema",
+          "{schema}"
+        ],
+        "result": {
+          "source": "stdout",
+          "pointer": "/structured_output",
+          "errorPointer": "/is_error"
+        }
+      }
     }
   }
 }
