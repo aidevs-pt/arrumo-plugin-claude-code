@@ -9,3 +9,14 @@ Copyright © 2026 DEVS AI Unipessoal LDA. Licensed under the [GNU Affero General
 For custom AI solutions for your company, visit [DEVS AI](https://aidevs.pt).
 
 The manifest declares the provider label, setup guide, and local authentication status command through the Arrumo Plugin SDK. The plugin ID is `claude-code`.
+
+## Translate subtitles
+
+Use `tools/translate-subtitles.py` as Auto-Dubbing's local translator. It
+uses the existing Claude Code login, sends cue text and the target language,
+and checks that the structured response includes exactly one translation per
+cue. Use a CLI version that supports restricted mode and JSON schema output.
+
+The adapter runs in a temporary directory and requests no built-in tools,
+an empty MCP configuration, disabled hooks, and no session persistence.
+[Claude Code headless reference](https://code.claude.com/docs/en/headless)
