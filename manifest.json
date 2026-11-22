@@ -27,17 +27,49 @@
           "--print",
           "--restricted",
           "--no-session-persistence",
-          "--tools",
-          "",
-          "--strict-mcp-config",
-          "--mcp-config",
-          "{\"mcpServers\":{}}",
+          "{settings}",
           "--settings",
           "{\"disableAllHooks\":true}",
           "--output-format",
           "json",
           "--json-schema",
           "{schema}"
+        ],
+        "settingArgs": [
+          {
+            "setting": "web-search",
+            "args": [
+              "--tools",
+              "WebSearch,WebFetch"
+            ],
+            "otherwise": [
+              "--tools",
+              ""
+            ]
+          },
+          {
+            "setting": "model",
+            "args": [
+              "--model",
+              "{value}"
+            ]
+          },
+          {
+            "setting": "reasoning-effort",
+            "args": [
+              "--effort",
+              "{value}"
+            ]
+          },
+          {
+            "setting": "installed-plugins",
+            "args": [],
+            "otherwise": [
+              "--strict-mcp-config",
+              "--mcp-config",
+              "{\"mcpServers\":{}}"
+            ]
+          }
         ],
         "result": {
           "source": "stdout",
@@ -46,5 +78,49 @@
         }
       }
     }
-  }
+  },
+  "settings": [
+    {
+      "id": "web-search",
+      "label": "Web search",
+      "description": "Lets the agent search the web while it works, for facts, prices and trends. It stays read-only and cannot run commands.",
+      "kind": "boolean",
+      "scope": "workspace",
+      "required": false,
+      "default": false
+    },
+    {
+      "id": "model",
+      "label": "Model",
+      "description": "The Claude model for this workspace's agent work, such as sonnet or opus. Leave empty to use Claude Code's default.",
+      "kind": "string",
+      "scope": "workspace",
+      "required": false
+    },
+    {
+      "id": "reasoning-effort",
+      "label": "Reasoning effort",
+      "description": "How long the agent thinks before answering. Higher effort gives better scripts and edits but takes longer.",
+      "kind": "string",
+      "scope": "workspace",
+      "required": false,
+      "choices": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "default": "medium"
+    },
+    {
+      "id": "installed-plugins",
+      "label": "Use my installed plugins",
+      "description": "Lets the agent use the plugins and tool servers you installed for it yourself. They can see the workspace material the agent is given, so turn this on only for ones you trust.",
+      "kind": "boolean",
+      "scope": "workspace",
+      "required": false,
+      "default": false
+    }
+  ]
 }
