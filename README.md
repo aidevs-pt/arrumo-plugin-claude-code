@@ -2,6 +2,12 @@
 
 The Claude Code agent adapter for planning, executing, and reporting on Arrumo video jobs.
 
+## Icon and trademarks
+
+`icon.svg` uses the official Claude Code mark, only to identify the service this
+plugin connects to. Claude, Claude Code and their logos are trademarks of Anthropic. This plugin is not affiliated with or endorsed by
+Anthropic, and the mark is not covered by this repository's license.
+
 Copyright © 2026 DEVS AI Unipessoal LDA. Licensed under the [GNU Affero General Public License v3.0](LICENSE).
 
 For custom AI solutions for your company, visit [DEVS AI](https://aidevs.pt).

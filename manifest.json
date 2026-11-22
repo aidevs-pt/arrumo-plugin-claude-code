@@ -173,7 +173,8 @@
       "pt": "O Claude Code escreve guiões, planeia recursos e traduz legendas com o teu plano Claude. Trabalha só em leitura e pede ao Arrumo o que quiser ver dos teus vídeos ou animações anteriores."
     }
   },
-  "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\"><rect width=\"32\" height=\"32\" rx=\"8\" fill=\"#c96442\"/><path d=\"M16 7v18M7 16h18M9.6 9.6l12.8 12.8M22.4 9.6L9.6 22.4\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+  "icon": "icon.svg",
+  "iconNotice": "Claude, Claude Code and their logos are trademarks of Anthropic.",
   "translations": {
     "en": {
       "settings": {
@@ -224,7 +225,8 @@
           "label": "Usar mis complementos instalados",
           "description": "Permite que el agente use los complementos y servidores de herramientas que instalaste para él. Pueden ver el material que recibe el agente, así que actívalo solo si confías en ellos."
         }
-      }
+      },
+      "iconNotice": "Claude, Claude Code y sus logotipos son marcas de Anthropic."
     },
     "pt": {
       "description": "Usa o teu plano Claude. Para gerar imagens é preciso uma chave OpenAI ou Gemini, que vais adicionar a seguir.",
@@ -262,7 +264,8 @@
           "label": "Usar os meus plugins instalados",
           "description": "Deixa o agente usar os plugins e servidores de ferramentas que instalaste para ele. Podem ver o material que o agente recebe, por isso ativa só se confiares neles."
         }
-      }
+      },
+      "iconNotice": "Claude, Claude Code e os seus logótipos são marcas da Anthropic."
     }
   }
 }
