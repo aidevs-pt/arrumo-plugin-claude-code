@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 7,
+  "schemaVersion": 8,
   "id": "claude-code",
   "name": "Claude Code",
   "description": "Uses your Claude plan. Image generation needs an OpenAI or Gemini key, added next.",
@@ -160,5 +160,17 @@
       "required": false,
       "default": false
     }
-  ]
+  ],
+  "introduction": {
+    "headline": {
+      "en": "Claude writes your videos",
+      "es": "Claude escribe tus vídeos",
+      "pt": "O Claude escreve os teus vídeos"
+    },
+    "body": {
+      "en": "Claude Code drafts scripts, plans assets and translates subtitles with your Claude plan. It works read-only and asks Arrumo when it wants to see your earlier videos or animations.",
+      "es": "Claude Code redacta guiones, planifica recursos y traduce subtítulos con tu plan de Claude. Trabaja en solo lectura y pide a Arrumo lo que quiera ver de tus vídeos o animaciones anteriores.",
+      "pt": "O Claude Code escreve guiões, planeia recursos e traduz legendas com o teu plano Claude. Trabalha só em leitura e pede ao Arrumo o que quiser ver dos teus vídeos ou animações anteriores."
+    }
+  }
 }
