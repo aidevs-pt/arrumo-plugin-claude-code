@@ -26,7 +26,7 @@
         "args": [
           "--print",
           "--restricted",
-          "--no-session-persistence",
+          "{ephemeral}",
           "{settings}",
           "--settings",
           "{\"disableAllHooks\":true}",
@@ -90,6 +90,29 @@
           "source": "stdoutLastLine",
           "pointer": "/structured_output",
           "errorPointer": "/is_error"
+        },
+        "ephemeralArgs": [
+          "--no-session-persistence"
+        ],
+        "resume": {
+          "args": [
+            "--print",
+            "--restricted",
+            "--resume",
+            "{session}",
+            "{settings}",
+            "--settings",
+            "{\"disableAllHooks\":true}",
+            "--output-format",
+            "stream-json",
+            "--verbose",
+            "--json-schema",
+            "{schema}"
+          ],
+          "session": {
+            "stream": "stdout",
+            "pointer": "/session_id"
+          }
         }
       }
     }

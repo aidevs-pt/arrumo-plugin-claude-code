@@ -19,3 +19,7 @@ El estado confirmed indica que la CLI aceptó la comprobación. Si Arrumo devuel
 ## Traduce los subtítulos
 
 Consulta [la traducción de subtítulos](../../README.md#translate-subtitles) para usar este plugin como traductor de Auto-Dubbing. El traductor envía a Claude Code el texto de los subtítulos seleccionados y el idioma de destino. El proceso conserva las marcas de tiempo originales.
+
+## Preguntas de seguimiento
+
+Cuando Claude Code pide a Arrumo material del espacio de trabajo, como el guion de un vídeo anterior, Arrumo responde en la misma sesión de Claude Code solo con ese material, así el encargo no se envía ni se paga dos veces. Estas sesiones quedan en el historial de Claude Code (`claude --resume`); las ejecuciones puntuales no guardan ninguna.

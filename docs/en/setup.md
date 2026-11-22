@@ -19,3 +19,7 @@ A confirmed status means the CLI accepted the sign-in probe. If Arrumo reports u
 ## Translate subtitle cues
 
 See [Translate subtitles](../../README.md#translate-subtitles) to use this plugin as an Auto-Dubbing translator. The translator sends the selected cue text and target language to Claude Code. The workflow keeps the original cue timings.
+
+## Follow-up questions
+
+When Claude Code asks Arrumo for workspace material, such as an earlier video's script, Arrumo answers in the same Claude Code session with only that material, so the brief is not sent and paid for twice. These sessions are kept in Claude Code's own history (`claude --resume`); one-off runs keep none.

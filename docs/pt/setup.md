@@ -19,3 +19,7 @@ O estado confirmed indica que a CLI aceitou a verificação. Se o Arrumo devolve
 ## Traduz as legendas
 
 Consulta [a tradução de legendas](../../README.md#translate-subtitles) para usares este plugin como tradutor do Auto-Dubbing. O tradutor envia para Claude Code o texto das legendas selecionadas e o idioma de destino. O processo preserva as marcas temporais originais.
+
+## Perguntas de seguimento
+
+Quando o Claude Code pede ao Arrumo material do espaço de trabalho, como o guião de um vídeo anterior, o Arrumo responde na mesma sessão do Claude Code só com esse material, para que o pedido não seja enviado nem pago duas vezes. Estas sessões ficam no histórico do Claude Code (`claude --resume`); as execuções pontuais não guardam nenhuma.
