@@ -180,7 +180,6 @@
     }
   },
   "icon": "icon.svg",
-  "iconNotice": "Claude, Claude Code and their logos are trademarks of Anthropic.",
   "translations": {
     "en": {
       "settings": {
@@ -231,8 +230,7 @@
           "label": "Usar mis complementos instalados",
           "description": "Permite que el agente use los complementos y servidores de herramientas que instalaste para él. Pueden ver el material que recibe el agente, así que actívalo solo si confías en ellos."
         }
-      },
-      "iconNotice": "Claude, Claude Code y sus logotipos son marcas de Anthropic."
+      }
     },
     "pt": {
       "description": "Usa o teu plano Claude. Para gerar imagens é preciso uma chave OpenAI ou Gemini, que vais adicionar a seguir.",
@@ -270,8 +268,7 @@
           "label": "Usar os meus plugins instalados",
           "description": "Deixa o agente usar os plugins e servidores de ferramentas que instalaste para ele. Podem ver o material que o agente recebe, por isso ativa só se confiares neles."
         }
-      },
-      "iconNotice": "Claude, Claude Code e os seus logótipos são marcas da Anthropic."
+      }
     }
   }
 }

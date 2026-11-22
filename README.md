@@ -4,15 +4,11 @@ The Claude Code agent adapter for planning, executing, and reporting on Arrumo v
 
 ## Icon and trademarks
 
-`icon.svg` uses the official Claude Code mark, only to identify the service this
-plugin connects to. Claude, Claude Code and their logos are trademarks of Anthropic. This plugin is not affiliated with or endorsed by
-Anthropic, and the mark is not covered by this repository's license.
-
-Copyright © 2026 DEVS AI Unipessoal LDA. Licensed under the [GNU Affero General Public License v3.0](LICENSE).
-
-For custom AI solutions for your company, visit [DEVS AI](https://aidevs.pt).
-
-The manifest declares the provider label, setup guide, and local authentication status command through the Arrumo Plugin SDK. The plugin ID is `claude-code`.
+`icon.svg` is a generic symbol drawn for Arrumo (code brackets, for an agent that writes and reviews code), covered by this repository's
+license. It is not the provider's logo: the provider has not published permission for its
+logo to appear in another app's interface, so the plugin does not use it. The name is used
+only to say which service the plugin connects to; this plugin is not affiliated with or
+endorsed by the provider.
 
 ## Setup guide
 
