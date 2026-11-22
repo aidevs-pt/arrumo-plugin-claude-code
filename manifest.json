@@ -31,7 +31,8 @@
           "--settings",
           "{\"disableAllHooks\":true}",
           "--output-format",
-          "json",
+          "stream-json",
+          "--verbose",
           "--json-schema",
           "{schema}"
         ],
@@ -40,6 +41,8 @@
             "setting": "web-search",
             "args": [
               "--tools",
+              "WebSearch,WebFetch",
+              "--allowedTools",
               "WebSearch,WebFetch"
             ],
             "otherwise": [
@@ -71,8 +74,20 @@
             ]
           }
         ],
+        "progress": [
+          {
+            "pointer": "/message/content/0/input/query",
+            "pattern": "^(\\S.*)$",
+            "kind": "search"
+          },
+          {
+            "pointer": "/message/content/0/thinking",
+            "pattern": "^(\\S.*)$",
+            "kind": "thinking"
+          }
+        ],
         "result": {
-          "source": "stdout",
+          "source": "stdoutLastLine",
           "pointer": "/structured_output",
           "errorPointer": "/is_error"
         }
