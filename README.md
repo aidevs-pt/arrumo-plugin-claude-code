@@ -4,11 +4,7 @@ The Claude Code agent adapter for planning, executing, and reporting on Arrumo v
 
 ## Icon and trademarks
 
-`icon.svg` is a generic symbol drawn for Arrumo (code brackets, for an agent that writes and reviews code), covered by this repository's
-license. It is not the provider's logo: the provider has not published permission for its
-logo to appear in another app's interface, so the plugin does not use it. The name is used
-only to say which service the plugin connects to; this plugin is not affiliated with or
-endorsed by the provider.
+`icon.svg` shows Anthropic's logo so creators recognise the service this plugin connects to. Claude, Claude Code and their logos are trademarks of Anthropic; the manifest's `iconNotice` says so wherever Arrumo shows the icon. The logo is not covered by this repository's license, and this plugin is not affiliated with or endorsed by Anthropic. The SVG is a square without rounded corners; Arrumo rounds it. If Anthropic asks, replace the logo with a generic symbol and remove `iconNotice`.
 
 ## Setup guide
 
