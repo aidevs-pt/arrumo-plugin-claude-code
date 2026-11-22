@@ -112,6 +112,12 @@
           "session": {
             "stream": "stdout",
             "pointer": "/session_id"
+          },
+          "cleanup": {
+            "homeEnv": "CLAUDE_CONFIG_DIR",
+            "home": ".claude",
+            "directory": "projects",
+            "fileSuffix": "{session}.jsonl"
           }
         }
       }
