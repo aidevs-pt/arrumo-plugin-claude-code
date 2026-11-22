@@ -172,5 +172,97 @@
       "es": "Claude Code redacta guiones, planifica recursos y traduce subtítulos con tu plan de Claude. Trabaja en solo lectura y pide a Arrumo lo que quiera ver de tus vídeos o animaciones anteriores.",
       "pt": "O Claude Code escreve guiões, planeia recursos e traduz legendas com o teu plano Claude. Trabalha só em leitura e pede ao Arrumo o que quiser ver dos teus vídeos ou animações anteriores."
     }
+  },
+  "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\"><rect width=\"32\" height=\"32\" rx=\"8\" fill=\"#c96442\"/><path d=\"M16 7v18M7 16h18M9.6 9.6l12.8 12.8M22.4 9.6L9.6 22.4\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+  "translations": {
+    "en": {
+      "settings": {
+        "reasoning-effort": {
+          "choices": {
+            "low": "Low",
+            "medium": "Medium",
+            "high": "High",
+            "xhigh": "Extra high",
+            "max": "Maximum"
+          }
+        }
+      }
+    },
+    "es": {
+      "description": "Usa tu plan de Claude. Para generar imágenes hace falta una clave de OpenAI o Gemini, que añadirás después.",
+      "capabilities": {
+        "agents": {
+          "name": "Adaptador de agente",
+          "description": "Planifica y ejecuta trabajos de edición e informa del progreso."
+        },
+        "subtitle-translation": {
+          "name": "Traducción de subtítulos",
+          "description": "Traduce los subtítulos con sus tiempos al idioma elegido."
+        }
+      },
+      "settings": {
+        "web-search": {
+          "label": "Búsqueda web",
+          "description": "Permite que el agente busque en la web mientras trabaja: datos, precios y tendencias. Sigue en solo lectura y no puede ejecutar comandos."
+        },
+        "model": {
+          "label": "Modelo",
+          "description": "El modelo de Claude para el trabajo del agente en este espacio, como sonnet u opus. Déjalo vacío para usar el predeterminado de Claude Code."
+        },
+        "reasoning-effort": {
+          "label": "Esfuerzo de razonamiento",
+          "description": "Cuánto piensa el agente antes de responder. Más esfuerzo da mejores guiones y ediciones, pero tarda más.",
+          "choices": {
+            "low": "Bajo",
+            "medium": "Medio",
+            "high": "Alto",
+            "xhigh": "Muy alto",
+            "max": "Máximo"
+          }
+        },
+        "installed-plugins": {
+          "label": "Usar mis complementos instalados",
+          "description": "Permite que el agente use los complementos y servidores de herramientas que instalaste para él. Pueden ver el material que recibe el agente, así que actívalo solo si confías en ellos."
+        }
+      }
+    },
+    "pt": {
+      "description": "Usa o teu plano Claude. Para gerar imagens é preciso uma chave OpenAI ou Gemini, que vais adicionar a seguir.",
+      "capabilities": {
+        "agents": {
+          "name": "Adaptador de agente",
+          "description": "Planeia e executa trabalhos de edição e reporta o progresso."
+        },
+        "subtitle-translation": {
+          "name": "Tradução de legendas",
+          "description": "Traduz as legendas com os seus tempos para a língua escolhida."
+        }
+      },
+      "settings": {
+        "web-search": {
+          "label": "Pesquisa na web",
+          "description": "Deixa o agente pesquisar na web enquanto trabalha: factos, preços e tendências. Continua só em leitura e não pode executar comandos."
+        },
+        "model": {
+          "label": "Modelo",
+          "description": "O modelo Claude para o trabalho do agente neste espaço, como sonnet ou opus. Deixa vazio para usar o predefinido do Claude Code."
+        },
+        "reasoning-effort": {
+          "label": "Esforço de raciocínio",
+          "description": "Quanto tempo o agente pensa antes de responder. Mais esforço dá melhores guiões e edições, mas demora mais.",
+          "choices": {
+            "low": "Baixo",
+            "medium": "Médio",
+            "high": "Alto",
+            "xhigh": "Muito alto",
+            "max": "Máximo"
+          }
+        },
+        "installed-plugins": {
+          "label": "Usar os meus plugins instalados",
+          "description": "Deixa o agente usar os plugins e servidores de ferramentas que instalaste para ele. Podem ver o material que o agente recebe, por isso ativa só se confiares neles."
+        }
+      }
+    }
   }
 }
