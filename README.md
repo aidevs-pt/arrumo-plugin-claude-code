@@ -8,7 +8,7 @@ The Claude Code agent adapter for planning, executing, and reporting on Arrumo v
 
 ## Setup guide
 
-[English](docs/en/setup.md) · [Español](docs/es/setup.md) · [Português](docs/pt/setup.md)
+[English](https://github.com/aidevs-pt/arrumo-docs/blob/main/content/docs/en/plugins/claude-code/setup.md) · [Español](https://github.com/aidevs-pt/arrumo-docs/blob/main/content/docs/es/plugins/claude-code/setup.md) · [Português](https://github.com/aidevs-pt/arrumo-docs/blob/main/content/docs/pt/plugins/claude-code/setup.md)
 
 ## Translate subtitles
 
