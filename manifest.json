@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 13,
+  "schemaVersion": 14,
   "id": "claude-code",
   "name": "Claude Code",
   "description": "Uses your Claude plan. Image generation needs an OpenAI or Gemini key, added next.",
@@ -25,11 +25,8 @@
       "structuredRun": {
         "args": [
           "--print",
-          "--restricted",
           "{ephemeral}",
           "{settings}",
-          "--settings",
-          "{\"disableAllHooks\":true}",
           "--output-format",
           "stream-json",
           "--verbose",
@@ -37,6 +34,18 @@
           "{schema}"
         ],
         "settingArgs": [
+          {
+            "setting": "local-tools",
+            "args": [
+              "--permission-mode",
+              "acceptEdits"
+            ],
+            "otherwise": [
+              "--restricted",
+              "--settings",
+              "{\"disableAllHooks\":true}"
+            ]
+          },
           {
             "setting": "web-search",
             "args": [
@@ -48,6 +57,21 @@
             "otherwise": [
               "--tools",
               ""
+            ],
+            "unless": "local-tools"
+          },
+          {
+            "setting": "web-search",
+            "when": "local-tools",
+            "args": [
+              "--allowedTools",
+              "Read,Write,Edit,Glob,Grep,Bash,WebSearch,WebFetch"
+            ],
+            "otherwise": [
+              "--allowedTools",
+              "Read,Write,Edit,Glob,Grep,Bash",
+              "--disallowedTools",
+              "WebSearch,WebFetch"
             ]
           },
           {
@@ -71,9 +95,11 @@
               "--strict-mcp-config",
               "--mcp-config",
               "{\"mcpServers\":{}}"
-            ]
+            ],
+            "unless": "local-tools"
           }
         ],
+        "workFolderSetting": "local-tools",
         "imageInput": {
           "args": [
             "--input-format",
@@ -134,12 +160,9 @@
         "resume": {
           "args": [
             "--print",
-            "--restricted",
             "--resume",
             "{session}",
             "{settings}",
-            "--settings",
-            "{\"disableAllHooks\":true}",
             "--output-format",
             "stream-json",
             "--verbose",
@@ -180,9 +203,19 @@
   },
   "settings": [
     {
+      "id": "local-tools",
+      "label": "Write files and run commands",
+      "description": "Lets the agent write its own scripts and files, run commands, and use your installed plugins, tool servers and hooks while it works on a video. Its files stay in a work folder for that video until the video is finished.",
+      "kind": "boolean",
+      "scope": "workspace",
+      "required": false,
+      "default": true,
+      "warning": "The agent can then change files on your computer and run programs with your account's access. Keep this on only with an agent and plugins you trust."
+    },
+    {
       "id": "web-search",
       "label": "Web search",
-      "description": "Lets the agent search the web while it works, for facts, prices and trends. It stays read-only and cannot run commands.",
+      "description": "Lets the agent search the web while it works, for facts, prices and trends.",
       "kind": "boolean",
       "scope": "workspace",
       "required": false,
@@ -219,7 +252,8 @@
       "kind": "boolean",
       "scope": "workspace",
       "required": false,
-      "default": false
+      "default": false,
+      "hiddenWhen": "local-tools"
     }
   ],
   "introduction": {
@@ -265,7 +299,7 @@
       "settings": {
         "web-search": {
           "label": "Búsqueda web",
-          "description": "Permite que el agente busque en la web mientras trabaja: datos, precios y tendencias. Sigue en solo lectura y no puede ejecutar comandos."
+          "description": "Permite que el agente busque en la web mientras trabaja: datos, precios y tendencias."
         },
         "model": {
           "label": "Modelo",
@@ -285,6 +319,11 @@
         "installed-plugins": {
           "label": "Usar mis complementos instalados",
           "description": "Permite que el agente use los complementos y servidores de herramientas que instalaste para él. Pueden ver el material que recibe el agente, así que actívalo solo si confías en ellos."
+        },
+        "local-tools": {
+          "label": "Escribir archivos y ejecutar comandos",
+          "description": "Permite que el agente escriba sus propios scripts y archivos, ejecute comandos y use tus complementos, servidores de herramientas y hooks mientras trabaja en un vídeo. Sus archivos se guardan en una carpeta de trabajo de ese vídeo hasta que termina.",
+          "warning": "Así, el agente puede cambiar archivos de tu equipo y ejecutar programas con los permisos de tu cuenta. Déjalo activado solo con un agente y complementos de confianza."
         }
       },
       "iconNotice": "Claude, Claude Code y sus logotipos son marcas de Anthropic."
@@ -304,7 +343,7 @@
       "settings": {
         "web-search": {
           "label": "Pesquisa na web",
-          "description": "Deixa o agente pesquisar na web enquanto trabalha: factos, preços e tendências. Continua só em leitura e não pode executar comandos."
+          "description": "Deixa o agente pesquisar na web enquanto trabalha: factos, preços e tendências."
         },
         "model": {
           "label": "Modelo",
@@ -324,6 +363,11 @@
         "installed-plugins": {
           "label": "Usar os meus plugins instalados",
           "description": "Deixa o agente usar os plugins e servidores de ferramentas que instalaste para ele. Podem ver o material que o agente recebe, por isso ativa só se confiares neles."
+        },
+        "local-tools": {
+          "label": "Escrever ficheiros e executar comandos",
+          "description": "Deixa o agente escrever os seus próprios scripts e ficheiros, executar comandos e usar os teus plugins, servidores de ferramentas e hooks enquanto trabalha num vídeo. Os ficheiros ficam numa pasta de trabalho desse vídeo até ele estar concluído.",
+          "warning": "Assim, o agente pode alterar ficheiros do teu computador e executar programas com as permissões da tua conta. Mantém isto ativo só com um agente e plugins em que confias."
         }
       },
       "iconNotice": "Claude, Claude Code e os seus logótipos são marcas da Anthropic."
