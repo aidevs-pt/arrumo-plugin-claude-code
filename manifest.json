@@ -111,6 +111,16 @@
             "pointer": "/message/content/0/thinking",
             "pattern": "^(\\S.*)$",
             "kind": "thinking"
+          },
+          {
+            "pointer": "/message/content/0/input/answer/summary",
+            "pattern": "^(\\S.*)$",
+            "kind": "step"
+          },
+          {
+            "pointer": "/message/content/0/input/summary",
+            "pattern": "^(\\S.*)$",
+            "kind": "step"
           }
         ],
         "result": {
