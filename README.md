@@ -33,6 +33,10 @@ an empty MCP configuration, disabled hooks, and no session persistence.
 
 `icon.svg` shows Anthropic's logo so creators recognise the service this plugin connects to. Claude, Claude Code and their logos are trademarks of Anthropic; the manifest's `iconNotice` says so wherever Arrumo shows the icon. The logo is not covered by this repository's license, and this plugin is not affiliated with or endorsed by Anthropic. The SVG is a square without rounded corners; Arrumo rounds it. If Anthropic asks, replace the logo with a generic symbol and remove `iconNotice`.
 
+## Contributing
+
+Contributions are welcome: read [CONTRIBUTING.md](CONTRIBUTING.md) and our [Code of Conduct](CODE_OF_CONDUCT.md). Report security problems privately as described in [SECURITY.md](SECURITY.md).
+
 ## License
 
 Copyright © 2026 DEVS AI Unipessoal LDA. Licensed under the [GNU Affero General Public License v3.0](LICENSE). Built by [DEVS AI](https://aidevs.pt), who make custom AI solutions for companies.
