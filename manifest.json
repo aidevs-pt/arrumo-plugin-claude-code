@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 14,
+  "schemaVersion": 15,
   "id": "claude-code",
   "name": "Claude Code",
   "description": "Uses your Claude plan. Image generation needs an OpenAI or Gemini key, added next.",
@@ -227,7 +227,14 @@
       "description": "The Claude model for this workspace's agent work, such as sonnet or opus. Leave empty to use Claude Code's default.",
       "kind": "string",
       "scope": "workspace",
-      "required": false
+      "required": false,
+      "suggestions": [
+        "fable",
+        "opus",
+        "sonnet",
+        "haiku",
+        "opusplan"
+      ]
     },
     {
       "id": "reasoning-effort",
@@ -281,6 +288,15 @@
             "xhigh": "Extra high",
             "max": "Maximum"
           }
+        },
+        "model": {
+          "choices": {
+            "fable": "Fable: hardest, longest tasks",
+            "opus": "Opus: complex reasoning",
+            "sonnet": "Sonnet: everyday work",
+            "haiku": "Haiku: fast and light",
+            "opusplan": "Opus plans, Sonnet works"
+          }
         }
       }
     },
@@ -303,7 +319,14 @@
         },
         "model": {
           "label": "Modelo",
-          "description": "El modelo de Claude para el trabajo del agente en este espacio, como sonnet u opus. Déjalo vacío para usar el predeterminado de Claude Code."
+          "description": "El modelo de Claude para el trabajo del agente en este espacio, como sonnet u opus. Déjalo vacío para usar el predeterminado de Claude Code.",
+          "choices": {
+            "fable": "Fable: las tareas más difíciles y largas",
+            "opus": "Opus: razonamiento complejo",
+            "sonnet": "Sonnet: trabajo diario",
+            "haiku": "Haiku: rápido y ligero",
+            "opusplan": "Opus planifica, Sonnet ejecuta"
+          }
         },
         "reasoning-effort": {
           "label": "Esfuerzo de razonamiento",
@@ -347,7 +370,14 @@
         },
         "model": {
           "label": "Modelo",
-          "description": "O modelo Claude para o trabalho do agente neste espaço, como sonnet ou opus. Deixa vazio para usar o predefinido do Claude Code."
+          "description": "O modelo Claude para o trabalho do agente neste espaço, como sonnet ou opus. Deixa vazio para usar o predefinido do Claude Code.",
+          "choices": {
+            "fable": "Fable: as tarefas mais difíceis e longas",
+            "opus": "Opus: raciocínio complexo",
+            "sonnet": "Sonnet: trabalho diário",
+            "haiku": "Haiku: rápido e leve",
+            "opusplan": "Opus planeia, Sonnet executa"
+          }
         },
         "reasoning-effort": {
           "label": "Esforço de raciocínio",
