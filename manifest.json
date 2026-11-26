@@ -15,7 +15,7 @@
   },
   "agentProvider": {
     "label": "Claude Code",
-    "setupUrl": "https://code.claude.com/docs/en/setup",
+    "setupUrl": "https://www.aidevs.pt/tools/arrumo/docs/plugins/claude-code/setup",
     "cli": {
       "executable": "claude",
       "authStatusArgs": [
