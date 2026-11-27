@@ -242,10 +242,11 @@
     {
       "id": "model",
       "label": "Model",
-      "description": "The Claude model for this workspace's agent work, such as sonnet or opus. Leave empty to use Claude Code's default.",
+      "description": "The Claude model for this workspace's agent work. Opus gives the best scripts and edits; choose sonnet for faster runs or if your plan doesn't include Opus.",
       "kind": "string",
       "scope": "workspace",
       "required": false,
+      "default": "opus",
       "suggestions": [
         "fable",
         "opus",
@@ -336,7 +337,7 @@
         },
         "model": {
           "label": "Modelo",
-          "description": "El modelo de Claude para el trabajo del agente en este espacio, como sonnet u opus. Déjalo vacío para usar el predeterminado de Claude Code.",
+          "description": "El modelo de Claude para el trabajo del agente en este espacio. Opus da los mejores guiones y montajes; elige sonnet para ejecuciones más rápidas o si tu plan no incluye Opus.",
           "choices": {
             "fable": "Fable: las tareas más difíciles y largas",
             "opus": "Opus: razonamiento complejo",
@@ -387,7 +388,7 @@
         },
         "model": {
           "label": "Modelo",
-          "description": "O modelo Claude para o trabalho do agente neste espaço, como sonnet ou opus. Deixa vazio para usar o predefinido do Claude Code.",
+          "description": "O modelo Claude para o trabalho do agente neste espaço. O Opus dá os melhores guiões e montagens; escolhe sonnet para execuções mais rápidas ou se o teu plano não incluir o Opus.",
           "choices": {
             "fable": "Fable: as tarefas mais difíceis e longas",
             "opus": "Opus: raciocínio complexo",
