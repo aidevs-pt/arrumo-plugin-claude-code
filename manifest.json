@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 15,
+  "schemaVersion": 16,
   "id": "claude-code",
   "name": "Claude Code",
   "description": "Uses your Claude plan. Image generation needs an OpenAI or Gemini key, added next.",
@@ -92,11 +92,11 @@
             "setting": "installed-plugins",
             "args": [],
             "otherwise": [
+              "--safe-mode",
               "--strict-mcp-config",
               "--mcp-config",
               "{\"mcpServers\":{}}"
-            ],
-            "unless": "local-tools"
+            ]
           }
         ],
         "workFolderSetting": "local-tools",
@@ -198,6 +198,24 @@
             "minutes": 10080
           }
         ]
+      },
+      "usageText": {
+        "args": [
+          "-p",
+          "/usage",
+          "--no-session-persistence",
+          "--safe-mode"
+        ],
+        "windows": [
+          {
+            "pattern": "Current session: (?P<used>\\d+(?:\\.\\d+)?)% used(?: · resets (?P<resets>[^(\\n]+?) \\()?",
+            "minutes": 300
+          },
+          {
+            "pattern": "Current week \\(all models\\): (?P<used>\\d+(?:\\.\\d+)?)% used(?: · resets (?P<resets>[^(\\n]+?) \\()?",
+            "minutes": 10080
+          }
+        ]
       }
     }
   },
@@ -205,7 +223,7 @@
     {
       "id": "local-tools",
       "label": "Write files and run commands",
-      "description": "Lets the agent write its own scripts and files, run commands, and use your installed plugins, tool servers and hooks while it works on a video. Its files stay in a work folder for that video until the video is finished.",
+      "description": "Lets the agent write its own scripts and files and run commands while it works on a video. Its files stay in a work folder for that video until the video is finished.",
       "kind": "boolean",
       "scope": "workspace",
       "required": false,
@@ -224,10 +242,11 @@
     {
       "id": "model",
       "label": "Model",
-      "description": "The Claude model for this workspace's agent work, such as sonnet or opus. Leave empty to use Claude Code's default.",
+      "description": "The Claude model for this workspace's agent work. Opus gives the best scripts and edits; choose sonnet for faster runs or if your plan doesn't include Opus.",
       "kind": "string",
       "scope": "workspace",
       "required": false,
+      "default": "opus",
       "suggestions": [
         "fable",
         "opus",
@@ -255,12 +274,11 @@
     {
       "id": "installed-plugins",
       "label": "Use my installed plugins",
-      "description": "Lets the agent use the plugins and tool servers you installed for it yourself. They can see the workspace material the agent is given, so turn this on only for ones you trust.",
+      "description": "Lets the agent use your own Claude Code setup: the plugins, skills, tool servers (MCP) and hooks you installed. They can see the workspace material the agent is given, so turn this on only for ones you trust.",
       "kind": "boolean",
       "scope": "workspace",
       "required": false,
-      "default": false,
-      "hiddenWhen": "local-tools"
+      "default": false
     }
   ],
   "introduction": {
@@ -319,7 +337,7 @@
         },
         "model": {
           "label": "Modelo",
-          "description": "El modelo de Claude para el trabajo del agente en este espacio, como sonnet u opus. Déjalo vacío para usar el predeterminado de Claude Code.",
+          "description": "El modelo de Claude para el trabajo del agente en este espacio. Opus da los mejores guiones y montajes; elige sonnet para ejecuciones más rápidas o si tu plan no incluye Opus.",
           "choices": {
             "fable": "Fable: las tareas más difíciles y largas",
             "opus": "Opus: razonamiento complejo",
@@ -341,11 +359,11 @@
         },
         "installed-plugins": {
           "label": "Usar mis complementos instalados",
-          "description": "Permite que el agente use los complementos y servidores de herramientas que instalaste para él. Pueden ver el material que recibe el agente, así que actívalo solo si confías en ellos."
+          "description": "Permite que el agente use tu propia configuración de Claude Code: los complementos, skills, servidores de herramientas (MCP) y hooks que instalaste. Pueden ver el material que recibe el agente, así que actívalo solo si confías en ellos."
         },
         "local-tools": {
           "label": "Escribir archivos y ejecutar comandos",
-          "description": "Permite que el agente escriba sus propios scripts y archivos, ejecute comandos y use tus complementos, servidores de herramientas y hooks mientras trabaja en un vídeo. Sus archivos se guardan en una carpeta de trabajo de ese vídeo hasta que termina.",
+          "description": "Permite que el agente escriba sus propios scripts y archivos y ejecute comandos mientras trabaja en un vídeo. Sus archivos se guardan en una carpeta de trabajo de ese vídeo hasta que termina.",
           "warning": "Así, el agente puede cambiar archivos de tu equipo y ejecutar programas con los permisos de tu cuenta. Déjalo activado solo con un agente y complementos de confianza."
         }
       },
@@ -370,7 +388,7 @@
         },
         "model": {
           "label": "Modelo",
-          "description": "O modelo Claude para o trabalho do agente neste espaço, como sonnet ou opus. Deixa vazio para usar o predefinido do Claude Code.",
+          "description": "O modelo Claude para o trabalho do agente neste espaço. O Opus dá os melhores guiões e montagens; escolhe sonnet para execuções mais rápidas ou se o teu plano não incluir o Opus.",
           "choices": {
             "fable": "Fable: as tarefas mais difíceis e longas",
             "opus": "Opus: raciocínio complexo",
@@ -392,11 +410,11 @@
         },
         "installed-plugins": {
           "label": "Usar os meus plugins instalados",
-          "description": "Deixa o agente usar os plugins e servidores de ferramentas que instalaste para ele. Podem ver o material que o agente recebe, por isso ativa só se confiares neles."
+          "description": "Deixa o agente usar a tua própria configuração do Claude Code: os plugins, skills, servidores de ferramentas (MCP) e hooks que instalaste. Podem ver o material que o agente recebe, por isso ativa só se confiares neles."
         },
         "local-tools": {
           "label": "Escrever ficheiros e executar comandos",
-          "description": "Deixa o agente escrever os seus próprios scripts e ficheiros, executar comandos e usar os teus plugins, servidores de ferramentas e hooks enquanto trabalha num vídeo. Os ficheiros ficam numa pasta de trabalho desse vídeo até ele estar concluído.",
+          "description": "Deixa o agente escrever os seus próprios scripts e ficheiros e executar comandos enquanto trabalha num vídeo. Os ficheiros ficam numa pasta de trabalho desse vídeo até ele estar concluído.",
           "warning": "Assim, o agente pode alterar ficheiros do teu computador e executar programas com as permissões da tua conta. Mantém isto ativo só com um agente e plugins em que confias."
         }
       },
